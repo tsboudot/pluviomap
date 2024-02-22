@@ -11,9 +11,7 @@ const App: React.FC = () => {
       <Header />
 
       <div className="MainContent">
-        <aside className="Aside">
-          {/* Contenu de l'aside */}
-        </aside>
+
 
         <div className="MapContainer">
           <MapContainer />
