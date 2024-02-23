@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux';
 import { setCoordinates } from '../slices/mapSlice';
+import { fetchRainfallData } from '../callApi/CallApi'; // Assurez-vous d'avoir le bon chemin d'importation
 
 const containerStyle = {
     width: '800px',
@@ -22,9 +23,20 @@ const MapContainer: React.FC = () => {
     });
 
     const handleClick = useCallback(
-        (event: google.maps.MapMouseEvent) => {
+        async (event: google.maps.MapMouseEvent) => {
             if (event.latLng) {
-                dispatch(setCoordinates({ lat: event.latLng.lat(), lng: event.latLng.lng() }));
+                const { lat, lng } = event.latLng.toJSON(); // Récupérer les coordonnées du clic
+
+                // Enregistrer les coordonnées dans le store Redux
+                dispatch(setCoordinates({ lat, lng }));
+
+                try {
+                    // Appeler la fonction fetchRainfallData pour envoyer la requête avec les coordonnées
+                    await fetchRainfallData({ lat, lng }, dispatch);
+                } catch (error) {
+                    console.error('Erreur lors de la récupération des données pluviométriques:', error);
+                    // Gérer les erreurs si nécessaire
+                }
             }
         },
         [dispatch]
