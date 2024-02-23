@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 import { setCoordinates } from '../redux/mapSlice';
 
 const containerStyle = {
-    width: '400px',
-    height: '400px',
+    width: '800px',
+    height: '800px',
 };
 
 const center = {
-    lat: -3.745,
-    lng: -38.523,
+    lat: 49.11,
+    lng: 0.31,
 };
 
 const MapContainer: React.FC = () => {
@@ -31,8 +31,8 @@ const MapContainer: React.FC = () => {
     );
 
     return isLoaded ? (
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onClick={handleClick}>
-            <Marker position={center} />
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12} onClick={handleClick}>
+
         </GoogleMap>
     ) : (
         <></>
