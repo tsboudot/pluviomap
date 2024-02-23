@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux';
-import { setCoordinates } from '../redux/mapSlice';
+import { setCoordinates } from '../slices/mapSlice';
 
 const containerStyle = {
     width: '800px',
