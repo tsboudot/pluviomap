@@ -1,12 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import mapReducer from './slices/mapSlice';
+
 import userReducer from './slices/userSlice';
-import rainFallReducer from './slices/rainSlice';
+import siteReducer from './slices/siteSlice';
 
 const rootReducer = combineReducers({
-    map: mapReducer,
     user: userReducer,
-    rain: rainFallReducer
+    site: siteReducer
 });
 
 export const store = configureStore({

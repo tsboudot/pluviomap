@@ -18,7 +18,9 @@ const updateSiteRainfall = async () => {
                     username: username,
                     password: password
                 }
-            });
+            })
+            console.log('Requette :', data);
+            ;
 
             const rainfallValue = response.data.data[0].coordinates[0].dates[0].value;
             site.pluviom = rainfallValue; // Mettre à jour la valeur pluviom du site dans data.json
