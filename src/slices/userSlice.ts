@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserState {
-    name: string;
+    FirstName: string;
+    LastName: string;
     email: string;
     // Autres champs utilisateur
 }
 
 const initialState: UserState = {
-    name: '',
-    email: '',
-    // Initialisation des autres champs utilisateur
+    FirstName: 'Thomas',
+    LastName: 'Boudot',
+    email: 'tsboudot@gmail.com',
 };
 
 const userSlice = createSlice({

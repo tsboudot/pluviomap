@@ -3,22 +3,25 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Aside from './components/Aside';
 import MapContainer from './components/MapContainer';
-import './App.css';
+import './styles/App.scss';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header />
+      <div className="AppContainer">
+        <Header />
 
-      <div className="MainContent">
+        <div className="MainContent">
 
 
-        <div className="MapContainer">
+
           <MapContainer />
+
+          <Aside />
         </div>
+
+        <Footer />
       </div>
-      <Aside />
-      <Footer />
     </div>
   );
 }

@@ -1,0 +1,34 @@
+header {
+    height: 170px;
+    background-color: lightgreen;
+    padding-top: 10px;
+
+}
+
+.userPic {
+    height: 80px;
+    border: 1px solid lightcyan;
+}
+
+.userPicContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.userInfos {
+    position: absolute;
+    top: 100%;
+
+    left: 0;
+    background-color: white;
+    border: 1px solid lightblue;
+    padding: 10px;
+    display: none;
+
+}
+
+.userPicContainer:hover .userInfos {
+    display: block;
+
+}
