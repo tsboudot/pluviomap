@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux';
 import { setCoordinates } from '../slices/mapSlice';
 import { fetchRainfallData } from '../callApi/CallApi'; // Assurez-vous d'avoir le bon chemin d'importation
+import data from '../data.json'; // Importez les données depuis le fichier data.json
 
 const containerStyle = {
     width: '800px',
@@ -10,8 +11,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: 49.11,
-    lng: 0.31,
+    lat: 48.9,
+    lng: -0.28,
 };
 
 const MapContainer: React.FC = () => {
@@ -43,8 +44,11 @@ const MapContainer: React.FC = () => {
     );
 
     return isLoaded ? (
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12} onClick={handleClick}>
-
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={9} onClick={handleClick}>
+            {/* Créer un marqueur pour chaque site */}
+            {data.map((site: any) => (
+                <Marker key={site.num_site} position={{ lat: site.lat, lng: site.lng }} />
+            ))}
         </GoogleMap>
     ) : (
         <></>
