@@ -19,7 +19,7 @@
         "ouverture_public": "Accessible (non aménagé)",
         "lat": 49,
         "lng": -0.49,
-        "pluviom": 0
+        "pluviometrie": 0
     },
     {
         "num_site": 34,
@@ -44,7 +44,7 @@
         "ouverture_public": "Accessible (non aménagé)",
         "lat": 49,
         "lng": -0.28,
-        "pluviom": 0
+        "pluviometrie": 0
     },
     {
         "num_site": 18,
@@ -69,6 +69,6 @@
         "ouverture_public": "Accessible (non aménagé)",
         "lat": 49.11,
         "lng": -0.42,
-        "pluviom": 0
+        "pluviometrie": 0
     }
 ]

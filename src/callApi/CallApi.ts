@@ -23,7 +23,7 @@ const updateSiteRainfall = async () => {
             ;
 
             const rainfallValue = response.data.data[0].coordinates[0].dates[0].value;
-            site.pluviom = rainfallValue; // Mettre à jour la valeur pluviom du site dans data.json
+            site.pluviometrie = rainfallValue; // Mettre à jour la valeur pluviom du site dans data.json
         } catch (error) {
             console.error('Erreur lors de la récupération des données pluviométriques pour le site :', site.libelle_site, error);
             // Gérer les erreurs si nécessaire

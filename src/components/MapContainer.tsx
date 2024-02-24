@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { useDispatch } from 'react-redux';
 import { setHoveredSite } from '../slices/siteSlice';
 import data from '../data.json';
-import { fetchRainfallDataOnLoad } from '../callApi/CallApi';
 
 const containerStyle = {
     width: '800px',
@@ -22,17 +21,6 @@ const MapContainer: React.FC = () => {
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY || '',
     });
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                await fetchRainfallDataOnLoad();
-            } catch (error) {
-                console.error('Erreur lors du chargement des données pluviométriques:', error);
-            }
-        };
-        fetchData();
-    }, []);
 
     const handleMarkerHover = useCallback(
         (site: any) => {
