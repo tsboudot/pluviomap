@@ -1,3 +1,51 @@
+header {
+  height: 170px;
+  background-color: lightgreen;
+  padding-top: 10px;
+}
+
+.userPic {
+  height: 80px;
+  border: 1px solid lightcyan;
+}
+
+.userPicContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.userInfos {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid lightblue;
+  padding: 10px;
+  display: none;
+}
+
+.userPicContainer:hover .userInfos {
+  display: block;
+}
+
+.appContainer {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  background-color: antiquewhite;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

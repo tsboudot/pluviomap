@@ -5,8 +5,8 @@ import { setHoveredSite } from '../slices/siteSlice';
 import data from '../data.json';
 
 const containerStyle = {
-    width: '800px',
-    height: '800px',
+    width: '400px',
+    height: '400px',
 };
 
 const center = {

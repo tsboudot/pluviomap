@@ -8,6 +8,7 @@ const Header: React.FC = () => {
 
     return (
         <header>
+            <div><h1>Pluviomap</h1></div>
             <div className='userPicContainer' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 <img src="userPic.png" alt="User Pic" className='userPic' />
                 {isHovered && (
@@ -17,6 +18,7 @@ const Header: React.FC = () => {
                     </div>
                 )}
             </div>
+
         </header>
     );
 }

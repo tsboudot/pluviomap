@@ -21,7 +21,7 @@ const Aside: React.FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className='aside'>
             <h2>Informations sur le site :</h2>
             {hoveredSite && (
                 <div>

@@ -1,7 +1,17 @@
+@import './colors.scss';
+
 header {
-    height: 170px;
-    background-color: lightgreen;
+    height: 70px;
+    background-color: $green-light;
+    border: 4px solid $green-medium;
+    border-radius: 17px;
     padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: $blue-heavy;
+    padding: 3%;
 
 }
 
@@ -14,6 +24,7 @@ header {
     position: relative;
     display: flex;
     flex-direction: row;
+    width: 11%;
 }
 
 .userInfos {
@@ -21,8 +32,8 @@ header {
     top: 100%;
 
     left: 0;
-    background-color: white;
-    border: 1px solid lightblue;
+    background-color: $blue-light;
+    border: 1px solid $grey-heavy;
     padding: 10px;
     display: none;
 
