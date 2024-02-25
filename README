@@ -1,0 +1,17 @@
+This is the Pluviomap application for a technical test with a view to joining 
+Kanop team as a Front End intern. 
+
+
+The aim of this application is to measure rainfall over the last 24 hours in the 
+Espaces Naturels Sensibles (ENS) registered under the "Zone humide" typology. 
+
+
+Remember to retrieve the .env.local file, and place it in the Pluviomap folder
+to enable the application to run.
+
+
+Also remember to run the "npm i" command from the Pluviomap folder to install the necessary
+the necessary dependencies. 
+
+
+And thank you for your time and attention. 

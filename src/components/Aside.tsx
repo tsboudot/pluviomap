@@ -4,14 +4,20 @@ import { RootState } from './../store';
 import { fetchRainfallDataOnLoad } from '../callApi/CallApi';
 import data from '../data.json';
 const Aside: React.FC = () => {
+
+    //Déclaration des variables Sites pour appeller l'API Meteomatics
+
     const [sites, setSites] = useState<any[]>([]);
     const hoveredSite = useSelector((state: RootState) => state.site.hoveredSite);
 
     useEffect(() => {
+
+        // Appel à l'API 
+
         const updateSitesData = async () => {
             try {
                 await fetchRainfallDataOnLoad();
-                setSites(data); // Supposons que les données mises à jour sont disponibles dans data.json
+                setSites(data);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données de pluviométrie :', error);
             }
@@ -20,12 +26,15 @@ const Aside: React.FC = () => {
         updateSitesData();
     }, []);
 
+
+    //Render des informations souhaitées
+
     return (
         <div className='aside'>
             <h2>Informations sur le site :</h2>
             {hoveredSite && (
                 <div>
-                    <p>Libellé du site : {hoveredSite.libelle_site}</p>
+                    <p>Nom du site : {hoveredSite.libelle_site}</p>
                     <p>Surface du site : {hoveredSite.surf_site}</p>
                     <p>Ouverture au public : {hoveredSite.ouverture_public}</p>
                     <p>Pluviométrie : {hoveredSite.pluviometrie}</p>

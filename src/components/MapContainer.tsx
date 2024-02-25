@@ -16,7 +16,7 @@ const defaultMapPosition = {
 };
 
 const MapContainer: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();  //Hook pour modifier le site hovered
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -34,7 +34,7 @@ const MapContainer: React.FC = () => {
         <GoogleMap mapContainerStyle={containerStyle} center={defaultMapPosition} zoom={9.7}>
             {data.map((site: any) => (
                 <Marker
-                    key={site.num_site}
+                    key={site.num_site} //Map pour marquer les différents sites
                     position={{ lat: site.lat, lng: site.lng }}
                     onMouseOver={() => handleMarkerHover(site)}
                 />
