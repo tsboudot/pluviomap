@@ -8,8 +8,9 @@ const containerStyle = {
     width: '400px',
     height: '400px',
 };
+// Centre de la carte par defaut 
 
-const center = {
+const defaultMapPosition = {
     lat: 49.2,
     lng: -0.28,
 };
@@ -30,7 +31,7 @@ const MapContainer: React.FC = () => {
     );
 
     return isLoaded ? (
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={9.7}>
+        <GoogleMap mapContainerStyle={containerStyle} center={defaultMapPosition} zoom={9.7}>
             {data.map((site: any) => (
                 <Marker
                     key={site.num_site}
