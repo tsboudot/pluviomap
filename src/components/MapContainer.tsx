@@ -10,7 +10,7 @@ const containerStyle = {
 };
 
 const center = {
-    lat: 48.9,
+    lat: 49.2,
     lng: -0.28,
 };
 
@@ -30,7 +30,7 @@ const MapContainer: React.FC = () => {
     );
 
     return isLoaded ? (
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={9}>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={9.7}>
             {data.map((site: any) => (
                 <Marker
                     key={site.num_site}

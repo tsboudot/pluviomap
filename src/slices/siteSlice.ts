@@ -6,6 +6,9 @@ interface SiteState {
         libelle_site: string | null;
         ouverture_public: string | null;
         pluviometrie: number | null;
+        surf_site: string | null; // Ajout de la surface du site
+        site_classe: string | null; // Ajout de l'indicateur de site classé
+        site_inscrit: string | null; // Ajout de l'indicateur de site inscrit
     };
 }
 
@@ -15,6 +18,9 @@ const initialState: SiteState = {
         libelle_site: null,
         ouverture_public: null,
         pluviometrie: null,
+        surf_site: null,
+        site_classe: null,
+        site_inscrit: null,
     },
 };
 
