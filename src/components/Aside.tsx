@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from './../store';
 import { fetchRainfallDataOnLoad } from '../callApi/CallApi';
-import data from '../data.json';
+
 const Aside: React.FC = () => {
 
-    //Déclaration des variables Sites pour appeller l'API Meteomatics
-
-    const [sites, setSites] = useState<any[]>([]);
     const hoveredSite = useSelector((state: RootState) => state.site.hoveredSite);
 
     useEffect(() => {
-
-        // Appel à l'API 
-
+        // Appel à l'API
         const updateSitesData = async () => {
             try {
                 await fetchRainfallDataOnLoad();
-                setSites(data);
             } catch (error) {
                 console.error('Erreur lors de la récupération des données de pluviométrie :', error);
             }
@@ -26,9 +20,7 @@ const Aside: React.FC = () => {
         updateSitesData();
     }, []);
 
-
-    //Render des informations souhaitées
-
+    // Render des informations souhaitées
     return (
         <div className='aside'>
             <h2>Informations sur le site :</h2>
